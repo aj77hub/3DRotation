@@ -39,20 +39,20 @@
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
-    // Orbit Controls
+    // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
     controls.enableZoom = true;
 
-    // Resize Handling
+    // Resize
     window.addEventListener('resize', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    // Animate
+    // Loop
     function animate() {
       requestAnimationFrame(animate);
       controls.update();
@@ -62,3 +62,4 @@
   </script>
 </body>
 </html>
+
